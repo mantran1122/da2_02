@@ -1,0 +1,22 @@
+# Root gitignore
+code/backend/vendor/
+code/backend/.env
+code/backend/storage/*.key
+code/backend/storage/framework/cache/data/*
+code/backend/storage/framework/sessions/*
+code/backend/storage/framework/views/*
+code/backend/storage/logs/*.log
+code/backend/bootstrap/cache/*.php
+
+code/frontend/node_modules/
+code/frontend/.next/
+code/frontend/out/
+code/frontend/.env.local
+code/frontend/.env*.local
+
+# System & IDE
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/
+*.swp

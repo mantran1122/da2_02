@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <title>Mã QR Đặt Món Tại Bàn - In Ép Plastic</title>
+    <style>
+        @page {
+            size: A4 portrait;
+            margin: 10mm;
+        }
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+            background: #f8fafc;
+            color: #0f172a;
+        }
+        .sheet {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 20px;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        .qr-card {
+            background: white;
+            border: 2px solid #ea580c;
+            border-radius: 16px;
+            padding: 24px;
+            text-align: center;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+            page-break-inside: avoid;
+        }
+        .logo-title {
+            font-size: 16px;
+            font-weight: 800;
+            color: #ea580c;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 4px;
+        }
+        .table-badge {
+            display: inline-block;
+            background: #ea580c;
+            color: white;
+            font-size: 22px;
+            font-weight: 900;
+            padding: 6px 20px;
+            border-radius: 9999px;
+            margin: 8px 0 16px;
+        }
+        .qr-img {
+            width: 180px;
+            height: 180px;
+            margin: 0 auto;
+            border: 1px solid #e2e8f0;
+            padding: 8px;
+            border-radius: 12px;
+        }
+        .instructions {
+            margin-top: 14px;
+            font-size: 12px;
+            color: #475569;
+            line-height: 1.5;
+        }
+        .instructions strong {
+            color: #0f172a;
+            display: block;
+            margin-bottom: 2px;
+            font-size: 13px;
+        }
+        .token-hash {
+            margin-top: 8px;
+            font-family: monospace;
+            font-size: 9px;
+            color: #94a3b8;
+        }
+        .print-btn {
+            display: block;
+            margin: 0 auto 20px;
+            padding: 10px 24px;
+            background: #ea580c;
+            color: white;
+            font-weight: bold;
+            font-size: 14px;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+        }
+        @media print {
+            .print-btn { display: none; }
+            body { background: white; padding: 0; }
+            .sheet { max-width: 100%; gap: 15mm; }
+        }
+    </style>
+</head>
+<body>
+    <button class="print-btn" onclick="window.print()">🖨️ IN MÃ QR RA GIẤY A4 (NHẤN ĐÂY)</button>
+
+    <div class="sheet">
+        <!-- BÀN B12 (BÀN DEMO CHÍNH) -->
+        <div class="qr-card">
+            <div class="logo-title">Quán Bếp Nhỏ</div>
+            <div class="table-badge">BÀN B12</div>
+            <div>
+                <!-- Tạo QR code trực tiếp qua API QR -->
+                <img
+                    class="qr-img"
+                    src="https://api.qrserver.com/v1/create-qr-code/?size=180x180&data=http://localhost:3000/s/a1b2c3d4-e5f6-7890-abcd-ef1234567890"
+                    alt="QR Bàn B12"
+                />
+            </div>
+            <div class="instructions">
+                <strong>QUÉT MÃ ĐỂ GỌI MÓN</strong>
+                Mở camera điện thoại quét mã QR<br>Không cần cài đặt ứng dụng
+            </div>
+            <div class="token-hash">Token: a1b2c3d4-e5f6-7890-abcd-ef1234567890</div>
+        </div>
+
+        <!-- BÀN B08 -->
+        <div class="qr-card">
+            <div class="logo-title">Quán Bếp Nhỏ</div>
+            <div class="table-badge">BÀN B08</div>
+            <div>
+                <img
+                    class="qr-img"
+                    src="https://api.qrserver.com/v1/create-qr-code/?size=180x180&data=http://localhost:3000/s/table_b08_demo_token"
+                    alt="QR Bàn B08"
+                />
+            </div>
+            <div class="instructions">
+                <strong>QUÉT MÃ ĐỂ GỌI MÓN</strong>
+                Mở camera điện thoại quét mã QR<br>Không cần cài đặt ứng dụng
+            </div>
+            <div class="token-hash">Token: table_B08_salt_2026</div>
+        </div>
+
+        <!-- BÀN B01 -->
+        <div class="qr-card">
+            <div class="logo-title">Quán Bếp Nhỏ</div>
+            <div class="table-badge">BÀN B01</div>
+            <div>
+                <img
+                    class="qr-img"
+                    src="https://api.qrserver.com/v1/create-qr-code/?size=180x180&data=http://localhost:3000/s/table_b01_demo_token"
+                    alt="QR Bàn B01"
+                />
+            </div>
+            <div class="instructions">
+                <strong>QUÉT MÃ ĐỂ GỌI MÓN</strong>
+                Mở camera điện thoại quét mã QR<br>Không cần cài đặt ứng dụng
+            </div>
+            <div class="token-hash">Token: table_B01_salt_2026</div>
+        </div>
+
+        <!-- BÀN B02 -->
+        <div class="qr-card">
+            <div class="logo-title">Quán Bếp Nhỏ</div>
+            <div class="table-badge">BÀN B02</div>
+            <div>
+                <img
+                    class="qr-img"
+                    src="https://api.qrserver.com/v1/create-qr-code/?size=180x180&data=http://localhost:3000/s/table_b02_demo_token"
+                    alt="QR Bàn B02"
+                />
+            </div>
+            <div class="instructions">
+                <strong>QUÉT MÃ ĐỂ GỌI MÓN</strong>
+                Mở camera điện thoại quét mã QR<br>Không cần cài đặt ứng dụng
+            </div>
+            <div class="token-hash">Token: table_B02_salt_2026</div>
+        </div>
+    </div>
+</body>
+</html>
